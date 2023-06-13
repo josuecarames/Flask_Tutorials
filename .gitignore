@@ -6,6 +6,3 @@ temp/
 
 #ignore DS Store
 .DS_Store
-
-#ignore venv
-venv/
