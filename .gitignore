@@ -1,8 +1,23 @@
-# ignore ALL .log files
-*.log
+# Ignore IDE and editor files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
 
-# ignore ALL files in ANY directory named temp
+# Ignore logs and temporary files
+logs/
 temp/
+project/__pycache__/
+*.log
+*.tmp
 
-#ignore DS Store
+# Ignore database files
+instance/db.sqlite
+
+# Ignore a specific directory and its contents
+.git/
+venv/
+
+# Ignore all files with a specific extension
+*.log
 .DS_Store
