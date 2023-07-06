@@ -44,6 +44,7 @@ def post(post_id):
 	return render_template('post.html', post=post)
 	
 @main.route('/create', methods=('GET', 'POST'))
+@login_required
 def create():
 	if request.method == 'POST':
 		title = request.form['title']
@@ -62,6 +63,7 @@ def create():
 
 	
 @main.route('/<int:id>/edit', methods=('GET', 'POST'))
+@login_required
 def edit(id):
 	post = get_post(id)
 
@@ -83,7 +85,8 @@ def edit(id):
 	return render_template('edit.html', post=post)
 	
 
-@app.route('/<int:id>/delete', methods=('POST',))
+@main.route('/<int:id>/delete', methods=('POST',))
+@login_required
 def delete(id):
 	post = get_post(id)
 	conn = get_db_connection()
